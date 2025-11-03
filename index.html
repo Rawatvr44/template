@@ -14,18 +14,41 @@
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
-  <!-- Navbar -->
-  <nav class="bg-gray-800 p-4 flex justify-between items-center max-w-7xl mx-auto">
+ <nav class="bg-gray-800 p-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
     <a href="#home" class="text-2xl font-bold text-blue-400">VR WebCreations</a>
-    <ul class="flex space-x-6 text-gray-300">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#templates" class="nav-link">Templates</a></li>
-      <li><a href="#services" class="nav-link">Services</a></li>
-      <li><a href="#process" class="nav-link">How It Works</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+
+    <!-- Hamburger Button (Mobile) -->
+    <button id="menu-btn" class="text-gray-300 focus:outline-none md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+
+    <!-- Menu Items -->
+    <ul id="menu" class="hidden md:flex space-x-6 text-gray-300">
+      <li><a href="#home" class="nav-link hover:text-blue-400">Home</a></li>
+      <li><a href="#templates" class="nav-link hover:text-blue-400">Templates</a></li>
+      <li><a href="#services" class="nav-link hover:text-blue-400">Services</a></li>
+      <li><a href="#process" class="nav-link hover:text-blue-400">How It Works</a></li>
+      <li><a href="#about" class="nav-link hover:text-blue-400">About</a></li>
+      <li><a href="#contact" class="nav-link hover:text-blue-400">Contact</a></li>
     </ul>
-  </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden mt-3 bg-gray-700 rounded-lg">
+    <ul class="flex flex-col space-y-2 text-gray-200 p-3">
+      <li><a href="#home" class="block hover:text-blue-400">Home</a></li>
+      <li><a href="#templates" class="block hover:text-blue-400">Templates</a></li>
+      <li><a href="#services" class="block hover:text-blue-400">Services</a></li>
+      <li><a href="#process" class="block hover:text-blue-400">How It Works</a></li>
+      <li><a href="#about" class="block hover:text-blue-400">About</a></li>
+      <li><a href="#contact" class="block hover:text-blue-400">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
   <!-- Hero Section -->
   <header id="home" class="text-center py-20 max-w-5xl mx-auto px-6">
@@ -113,6 +136,12 @@ F
     &copy; 2025 RV Web Creations. All rights reserved.
   </footer>
   <script>
+const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
     const templates = [
       { title: 'Electric Xtra', link: 'https://templatemo.com/live/templatemo_596_electric_xtra' },
       { title: 'Festava Live', link: 'https://templatemo.com/live/templatemo_583_festava_live' },
